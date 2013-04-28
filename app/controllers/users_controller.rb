@@ -7,14 +7,14 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(params[:user])
 		if @user.save
-			redirect_to "/users/login"
+			redirect_to login_path
 		else
 			flash[:notice] = "Passwords don't match"
-			redirect_to root_path
+			render :new
 		end
 	end
 
 	def login
-
+		render "login"
 	end
 end

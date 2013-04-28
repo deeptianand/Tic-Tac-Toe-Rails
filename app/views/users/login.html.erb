@@ -1,1 +1,5 @@
-login.html.erb
+<%=form_for :user, :url => '/sessions', :action => "create" do |f|%>
+<%= f.text_field :email%>
+<%= f.text_field :password%>
+<%= f.submit "Submit"%>
+<%end%>

@@ -1,7 +1,8 @@
 TicTacToe::Application.routes.draw do
   root :to => "application#index"
   resources :users
-  match '/users/login' => "users#login"
+  match "/login" => "users#login" , :as => :login
+  resources :sessions
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
